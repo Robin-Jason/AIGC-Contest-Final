@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import {sendChatPrompt} from "@/api/SportAnalysis";
 
 export default {
   name: 'HealthInfo',
@@ -142,9 +142,9 @@ export default {
         content: prompt,
         sessionId: this.sessionId
       };
-      axios.post('/api/chat/send', requestBody)
-          .then(response => {
-            const responseData = response.data;
+
+      sendChatPrompt(requestBody)
+          .then(responseData => {
             if (responseData && responseData.data && responseData.code === 0) {
               this.analysisResult = responseData.data.content; // 显示从大语言模型返回的内容
             } else {

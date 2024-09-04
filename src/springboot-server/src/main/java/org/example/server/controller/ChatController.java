@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/chatBLM")
+@RequestMapping("/chatBLM")
 public class ChatController {
 
     private final WebClient webClient;

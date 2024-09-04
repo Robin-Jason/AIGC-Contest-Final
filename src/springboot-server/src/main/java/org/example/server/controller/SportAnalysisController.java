@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/chat")
+@RequestMapping("/chat")
 public class SportAnalysisController {
 
     private final WebClient webClient;
