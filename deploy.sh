@@ -44,7 +44,7 @@ echo -e "开始构建 jar 包..."
 
 docker run -it --rm --name my-maven \
     -v my-maven-repo:/root/.m2 \
-    -v "$PWD/my-server":/usr/src/mymaven \
+    -v "$PWD/springboot-server":/usr/src/mymaven \
     -w /usr/src/mymaven \
     maven:3.8.4-jdk-11 mvn clean install package -e '-Dmaven.test.skip=true' || { echo -e "${RED}构建 jar 包失败。${NC}"; exit 1; }
 
