@@ -46,7 +46,7 @@ docker run -it --rm --name my-maven \
     -v my-maven-repo:/root/.m2 \
     -v "$PWD/my-server":/usr/src/mymaven \
     -w /usr/src/mymaven \
-    maven:3.8.4-jdk-8 mvn clean install package -e '-Dmaven.test.skip=true' || { echo -e "${RED}构建 jar 包失败。${NC}"; exit 1; }
+    maven:3.8.4-jdk-11 mvn clean install package -e '-Dmaven.test.skip=true' || { echo -e "${RED}构建 jar 包失败。${NC}"; exit 1; }
 
 echo -e "通过容器构建 jar 包......${GREEN}通过${NC}"
 
