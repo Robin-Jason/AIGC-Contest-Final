@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <HeaderComponent />
     <main class="main-content">
       <div class="video-chat">
-        <img src="@/assets/video-chat.png" alt="Video Chat" class="video-image" />
+        <img src="@/assets/AIChat/video-chat.png" alt="Video Chat" class="video-image" />
         <div class="video-overlay">
           <p class="overlay-text" v-if="!isChatting">点击通话按钮与蓝心小v聊天</p>
           <p class="overlay-text" v-if="isChatting">李奶奶您正在与蓝心小v进行聊天</p>
@@ -18,22 +17,15 @@
         </div>
       </div>
     </main>
-    <FooterComponent />
   </div>
 </template>
 
 <script>
-import FooterComponent from '@/layout/FooterComponent.vue';
-import HeaderComponent from '@/layout/HeaderComponent.vue';
 import { sendMessageToGpt } from '@/api/chatWithGpt';
 import { v4 as uuidv4 } from 'uuid';
 
 export default {
   name: 'Chat',
-  components: {
-    HeaderComponent,
-    FooterComponent
-  },
   data() {
     return {
       isChatting: false,
@@ -236,10 +228,10 @@ export default {
 }
 
 .call-button.green {
-  background-image: url('@/assets/call.png');
+  background-image: url('@/assets/AIChat/call.png');
 }
 
 .call-button.red {
-  background-image: url('@/assets/hangUp.png');
+  background-image: url('@/assets/AIChat/hangUp.png');
 }
 </style>
